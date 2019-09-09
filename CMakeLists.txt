@@ -24,6 +24,16 @@ else()
 endif()
 
 ##############################################
+#                    boost                   #
+##############################################
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+
+find_package(Boost 1.60 REQUIRED COMPONENTS date_time)
+message(STATUS "Boost version: ${Boost_VERSION}")
+
+##############################################
 #             packages to build              #
 ##############################################
 add_subdirectory(src/lib1)

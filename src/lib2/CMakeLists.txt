@@ -10,4 +10,6 @@ target_include_directories(lib2
         )
 # add ncurses library
 find_library(NCURSES_LIB ncurses)
-target_link_libraries(lib2 PRIVATE "${NCURSES_LIB}")
+if(NCURSES_LIB)
+    target_link_libraries(lib2 PRIVATE "${NCURSES_LIB}")
+endif()
